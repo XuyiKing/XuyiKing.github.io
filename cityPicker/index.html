@@ -11,9 +11,6 @@
 
 </head>
 <body>
-    <div style="position:relative;">
-        省市区：<input name="" readonly id="dist">
-    </div>
     <div>
         实例代码：
         <pre>
@@ -24,11 +21,18 @@
     })
     </pre>
     </div>
+    <div style="height: 5px;">
+
+    </div>
+    <div id="contain" style="position:relative;">
+        省市区：<input name="" readonly id="dist">
+    </div>
+
 </body>
 <script>
     $(function () {
         $("#dist").myDistpicker({
-            stopBy: 'div'
+            stopBy: '#contain'
         });
     })
 </script>
