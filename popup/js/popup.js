@@ -66,7 +66,7 @@ var Popup = (function () {
         }, options);
 
         // content 修饰
-        settings.content = '<div class="layui-row flexcenter padding-top-10">' +
+        settings.content = '<div class="layui-row flexcenter padding-top-10" style="text-align: center;">' +
             '<img src= "' + USER_STATIC + '/image/invalid-name.svg" alt="">' +
             '<span>' + settings.content + '</span>' +
             '</div>';
@@ -139,13 +139,9 @@ var Popup = (function () {
                 $.addback()
             }
             $('#modelback').css('display', 'block');
-            // for (var key in option) {
-            //     if (option[key]) {
-            //         optiondefault[key] = option[key];
-            //     }
-            // }
 
-            optiondefault = $.extend(true, optiondefaults, option);
+            // 获取配置参数，避免对配置常量污染
+            optiondefault = $.extend(true, {}, optiondefaults, option);
 
             /*htmlModel[option.el]*/
             $('body').append(
@@ -174,7 +170,7 @@ var Popup = (function () {
                 realHtml = $(optiondefault.el).html();
                 $(optiondefault.el).html("");
             } else if (optiondefault.content) {
-                realHtml = '<div>' +
+                realHtml = '<div style="text-align: center;">' +
                     optiondefault.content +
                     '</div>';
             }
